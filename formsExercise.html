@@ -1,87 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Customer Experience Survey">
-  <title>Customer Experience Survey</title>
+  <title>Survey</title>
 </head>
+
 <body>
-    <form>
-        <fieldset>
-            <legend>Customer Experience Survey</legend>
-            <label for="storenumber">Store Number</label>
-            <select name="storenumber" id="storenumber">
-                <option value="3109">3109</option>
-                <option value="2421">2421</option>
-                <option value="5357">5357</option>
-            </select>
-            </form>
-            <fieldset>
-              <legend> When You Visited </legend>
-              
-              <label for="date"> Date Visited </label>
-              <input type="date" id="date">
-              
-              <br> 
+  <form>
+    <fieldset>
+      <legend>Customer Experience Survey</legend>
+      <label for="store">Store Number</label>
+      <select name="store" id="store">
+        <option hidden>Select A Store</option>
+        <option value="3109">3109</option>
+        <option value="2421">2421</option>
+        <option value="5357">5357</option>
+      </select>
 
-              <label for="time"> Time </label>
-              <input type="time" id="time">
-              
-            </fieldset>
+      <fieldset>
+        <legend> When you visited:</legend>
 
-                <br>
+        <label for="date"> Date Visited </label>
+        <input type="date" id="date" name="date" min="2022-01-01" max="2022-12-31">
 
-                
-                  <label for="FullName">Full Name:</label>
-                  <input type="text" id="fullname" placeholder=Name required>
-                  
-                  <br>
-                
-                  <label for="Email">Email:</label>
-                  <input type="text" id="email" placeholder=Email required>
-                  
-                  <fieldset>
-                    <legend> How would you rate  your level of satisfaction with your visit? </legend>
-                    <input type="checkbox" id="satisfied">
-                    <label for="satisfied">Satisfied</label>
-                    <br>
-                    <input type="checkbox" id="neither satisfied nor dissatisfied">
-                    <label for="neither satisfied nor dissatisfied">Neither Satisfied Nor Dissatisfied</label>
-                    <br>
-                    <input type="checkbox" id="dissatisfied">
-                    <label for="dissatisfied">Dissatisfied</label>
+        <br>
+
+        <label for="time"> Time </label>
+        <input type="time" id="time" name="time">
+
+      </fieldset>
+
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder=Name>
+
+      <br>
+
+      <label for="Email">Email:</label>
+      <input type="email" id="email" name="email" placeholder=Email>
+
+      <fieldset>
+        <legend> How would you rate your level of satisfaction with your visit? </legend>
+        <input type="radio" id="satisfied" name="visit" value="satisfied">
+        <label for="satisfied">Satisfied</label>
+        <br>
+        <input type="radio" id="neither" name="visit" value="neither" checked>
+        <label for="neither">Neither Satisfied Nor Dissatisfied</label>
+        <br>
+        <input type="radio" id="dissatisfied" name="visit" value="dissatisfied">
+        <label for="dissatisfied">Dissatisfied</label>
 
 
-                  </fieldset>
+      </fieldset>
 
-                  <label for="tells us about your experience"> Tell Us About Your Experience:</label>
+      <label for="experience"> Tell Us About Your Experience:</label>
+      <br>
+      <textarea name="experience" id="experience" cols="20" row="2"></textarea>
 
-                  <br>
+      <br>
 
-                  <textarea name="experience" id="experience" cols="20" row="2"></textarea>
+      <label for="times">Times Visited In The Last Month:</label>
+      <br>
+      <input type="number" id="times" name="times" min="1" max="30">
 
-                  <br>
-
-                  <label for="times visited in the last month">Times Visited In The Last Month:</label>
-                  <br>
-                  <input type="text" id="times visited" required>
-
-                  <br>
-
-                  <input type="checkbox" id="checkbox">
-                  <label for="satisfied">Please Check The Box If You Are Willing To Be Contacted About Your Experience</label>
-
-                  <br>
-
-                  <input type="Submit">
-
-
-
-
-
-                </form>
-                
-    
- 
+      <br>
+      <input type="checkbox" id="contact" required>
+      <label for="contact">Please check the box if you are willing to be contacted about your experience</label>
+      <br>
+      
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" pattern=".{5,10}"
+        title="Please enter a password that is 5 to 10 characters in length " required>
+      <br>
+      <input type="reset">
+      <input type="Submit">
+    </fieldset>
+  </form>
+</body>
